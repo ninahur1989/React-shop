@@ -10,15 +10,23 @@ export function useProducts() {
   function addProduct(product: IProduct) {
     setProducts(prev => [...prev, product])
   }
+  function removeProduct(product: IProduct) {
+    setProducts(products.slice(products.indexOf(product, 1)))
+  }
+  
 
   async function fetchProducts() {
     try {
+      console.log("i am in try")
       setError('')
       setLoading(true)
       const response = await axios.get<IProduct[]>('https://fakestoreapi.com/products?limit=5')
+      console.log("after initizilation response")
       setProducts(response.data)
+      console.log("response data")
       setLoading(false)
     } catch (e: unknown) {
+      console.log("something cathed")
       const error = e as AxiosError
       setLoading(false)
       setError(error.message)
@@ -29,5 +37,5 @@ export function useProducts() {
     fetchProducts()
   }, [])
 
-  return { products, error, loading, addProduct }
+  return { products, error, loading, addProduct,removeProduct }
 }

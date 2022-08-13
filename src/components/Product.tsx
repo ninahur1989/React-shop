@@ -21,6 +21,7 @@ export function Product({ product }: ProductProps) {
 
 const c = b.concat(a as string) 
 
+
   return (
     <div
       className="border py-2 px-4 rounded flex flex-col items-center mb-2"
