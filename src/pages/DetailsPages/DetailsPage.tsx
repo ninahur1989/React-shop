@@ -8,6 +8,9 @@ const { id } = useParams();
 return (
     <div>
     <h2>About with Id: {id} </h2>
+    <div>
+        soref,lds
+    </div>
     </div>
     )
 }
