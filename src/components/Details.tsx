@@ -11,7 +11,7 @@ interface ProductProps {
   product: IProduct
 }
 
-export function Product({ product }: ProductProps) {
+export function Details({ product }: ProductProps) {
   const [details, setDetails] = useState(false)
 
   const btnBgClassName = details ? 'bg-yellow-400' : 'bg-blue-400'
@@ -20,6 +20,7 @@ export function Product({ product }: ProductProps) {
   let b = "/";
 
 const c = b.concat(a as string) 
+
 
   return (
     <div
